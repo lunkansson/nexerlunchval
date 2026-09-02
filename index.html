@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="sv" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lunchval hos Bistrot</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+  <div class="wrap">
+
+    <header class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Business Unit · Lunchbeställning</div>
+        <h1>Lunchval hos Bistrot</h1>
+        <p class="lede">Fredagsmenyn <span id="menu-week-label">denna vecka</span>, Bistrot Lindholmen. Välj din rätt, skriv ditt namn och ange eventuella allergier. Sammanställningen till höger är vad vi beställer.</p>
+      </div>
+      <div class="hero-cards">
+        <div class="card elev-sm deadline-card">
+          <div class="card-kicker" style="font-size:12px">Sista anmälan</div>
+          <div class="card-title" id="deadline-label" style="font-size:26px">torsdag kl 13:00</div>
+        </div>
+      </div>
+    </header>
+
+    <div id="locked-banner" class="card elev-md locked-card" hidden>
+      <div class="card-kicker">Anmälan stängd</div>
+      <div class="locked-note">Stopptiden (<span id="locked-deadline"></span>) har passerat – beställningen är skickad till Bistrot. Prata med den som beställer om något måste ändras.</div>
+      <a class="btn btn-secondary" href="orders.html" style="align-self:flex-start;min-height:44px;padding-inline:18px">Se allas beställningar →</a>
+    </div>
+
+    <div class="lv-grid">
+
+      <form id="lv-form">
+        <section>
+          <h2>1. Välj rätt</h2>
+          <div id="menu-groups"></div>
+          <p class="fine-print">I alla rätter ingår salladsbuffé, hembakt surdegsbröd, kaffe och kaka.</p>
+        </section>
+
+        <section>
+          <h2>2. Dina uppgifter</h2>
+          <div class="fields-grid">
+            <div class="field">
+              <label for="lv-name">Namn</label>
+              <input class="input" id="lv-name" name="name" type="text" placeholder="Anna Andersson" autocomplete="off">
+            </div>
+          </div>
+          <div class="field">
+            <label for="lv-allergy">Allergier eller specialkost</label>
+            <textarea class="input" id="lv-allergy" name="allergies" placeholder="T.ex. laktos, gluten, nötter – lämna tomt om inget" style="min-height:74px"></textarea>
+          </div>
+          <div class="actions-row">
+            <button class="btn btn-primary" id="lv-submit" type="submit" style="min-height:44px;padding-inline:20px">Skicka mitt val</button>
+            <a class="btn btn-secondary" href="orders.html" style="min-height:44px;padding-inline:18px">Se allas beställningar →</a>
+            <span class="notice" id="lv-notice"></span>
+          </div>
+        </section>
+      </form>
+
+      <aside class="summary">
+        <div class="card elev-md summary-card">
+          <div class="summary-head">
+            <h2>Beställningen</h2>
+            <span class="count-label" id="count-label">0 portioner</span>
+          </div>
+          <div class="tally-list" id="tally-list"></div>
+          <p class="empty-note" id="empty-note">Inga val ännu. Det första valet hamnar här.</p>
+          <p class="error-note" id="error-note" hidden></p>
+        </div>
+
+        <a class="btn btn-secondary btn-block" href="orders.html" style="min-height:44px">Se allas beställningar →</a>
+
+        <div class="card elev-sm contact-card">
+          <div class="card-kicker">Bistrot Lindholmen</div>
+          <div class="contact-line">Diagonalen 8, Göteborg · 031-22 33 23</div>
+          <div class="contact-links"><a href="https://bistrot.se/" target="_blank" rel="noreferrer">bistrot.se</a> · <a href="mailto:catering@bistrot.se">catering@bistrot.se</a></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<script type="module" src="lunchval.js"></script>
+</body>
+</html>

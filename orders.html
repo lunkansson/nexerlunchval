@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="sv" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Allas beställningar – Lunchval</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+  <div class="wrap wrap-narrow">
+
+    <header class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Fredagsmöte · sammanställning</div>
+        <h1>Allas beställningar</h1>
+        <p class="lede">Det här är listan som går till Bistrot. <span id="count-label">0 portioner</span> registrerade · <span id="status-label">öppen</span></p>
+      </div>
+      <a class="btn btn-secondary" href="index.html" style="min-height:44px;padding-inline:18px">← Till valformuläret</a>
+    </header>
+
+    <div id="error-card" class="card elev-sm" style="gap:var(--space-1);border:1px solid var(--color-accent)" hidden>
+      <div class="card-kicker">Kunde inte läsa listan</div>
+      <div id="error-text" style="font-size:13px;color:color-mix(in srgb, var(--color-text) 70%, transparent)"></div>
+    </div>
+
+    <div id="orders-section" hidden style="display:flex;flex-direction:column;gap:26px">
+
+      <section class="stack">
+        <h2>Antal per rätt</h2>
+        <div class="tally-grid" id="tally-grid"></div>
+      </section>
+
+      <section class="stack">
+        <h2>Vem har valt vad</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Namn</th>
+              <th>Rätt</th>
+              <th>Allergi / specialkost</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="orders-tbody"></tbody>
+        </table>
+      </section>
+
+      <section class="stack">
+        <div id="allergy-card" class="card elev-sm" style="gap:var(--space-2)" hidden>
+          <div class="card-kicker">Att flagga till köket</div>
+          <div id="allergy-list"></div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-primary" id="copy-btn" type="button" style="min-height:44px;padding-inline:18px">Kopiera sammanställning</button>
+          <a class="btn btn-secondary" id="mail-link" href="#" style="min-height:44px;padding-inline:18px">Mejla till Bistrot</a>
+          <button class="btn btn-ghost" id="clear-btn" type="button">Rensa listan</button>
+        </div>
+      </section>
+    </div>
+
+    <div id="empty-card" class="card elev-sm" style="gap:var(--space-3);padding:var(--space-8);align-items:flex-start" hidden>
+      <p style="margin:0;color:color-mix(in srgb, var(--color-text) 60%, transparent)">Ingen har valt något ännu.</p>
+      <a class="btn btn-primary" href="index.html" style="min-height:44px;padding-inline:18px">Öppna valformuläret</a>
+    </div>
+
+  </div>
+</div>
+<script type="module" src="orders.js"></script>
+</body>
+</html>

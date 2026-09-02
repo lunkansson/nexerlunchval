@@ -1,0 +1,47 @@
+{
+  "week": 36,
+  "updated": "2026-09-02",
+  "source": "manuell",
+  "groups": [
+    {
+      "title": "Fredagens rätter",
+      "items": [
+        {
+          "name": "Biff Rydberg",
+          "desc": "Ryggbiff · Tärnad potatis · Senapskräm · Riven pepparrot · Persilja",
+          "tags": ["Kött"]
+        },
+        {
+          "name": "Parmesangratinerad fångst",
+          "desc": "Beurre blanc · Semitorkade tomater · Rucola · Rostad potatis",
+          "tags": ["Fisk"]
+        }
+      ]
+    },
+    {
+      "title": "Vegetariskt",
+      "items": [
+        {
+          "name": "Panoumiburgare (veg)",
+          "desc": "Fredagens vegetariska",
+          "tags": ["Vegetariskt"]
+        }
+      ]
+    },
+    {
+      "title": "Salad",
+      "items": [
+        {
+          "name": "Caesarsallad med kyckling & bacon",
+          "desc": "Grana padano · Tomater · Rödlök · Krutonger · Caesardressing",
+          "tags": []
+        },
+        {
+          "name": "Caesarsallad med räkor",
+          "desc": "Grana padano · Tomater · Rödlök · Krutonger · Caesardressing",
+          "tags": ["Skaldjur"]
+        }
+      ]
+    }
+  ]
+}
