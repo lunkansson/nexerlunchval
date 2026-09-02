@@ -6,8 +6,8 @@
  *    lokalt/i förhandsvisning precis som förut – men delas då inte mellan personer.
  */
 
-export const SUPABASE_URL = "";            // t.ex. "https://xxxx.supabase.co"
-export const SUPABASE_ANON_KEY = "";       // publik anon-nyckel
+export const SUPABASE_URL = "https://izfgfzpftfekcxlcskjo.supabase.co";
+export const SUPABASE_ANON_KEY = "sb_publishable_MKONnT3yhsWoafa8827y_Q_6S098boN";
 const TABLE = "lunch_orders";
 const MENU_TABLE = "lunch_menu";
 
