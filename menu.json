@@ -1,19 +1,19 @@
 {
-  "week": 36,
-  "updated": "2026-09-02",
+  "week": 38,
+  "updated": "2026-09-18",
   "source": "manuell",
   "groups": [
     {
       "title": "Fredagens rätter",
       "items": [
         {
-          "name": "Biff Rydberg",
-          "desc": "Ryggbiff · Tärnad potatis · Senapskräm · Riven pepparrot · Persilja",
+          "name": "Högrevsbiff",
+          "desc": "Bearnaisesås · Tomat & löksallad · Rödvinssky · Klyftpotatis · Persilja",
           "tags": ["Kött"]
         },
         {
-          "name": "Parmesangratinerad fångst",
-          "desc": "Beurre blanc · Semitorkade tomater · Rucola · Rostad potatis",
+          "name": "Pankostek fångst",
+          "desc": "Remouladsås · Fänkålscrudité · Citron · Rostad potatis",
           "tags": ["Fisk"]
         }
       ]
@@ -22,7 +22,7 @@
       "title": "Vegetariskt",
       "items": [
         {
-          "name": "Panoumiburgare (veg)",
+          "name": "Pannoumiburgare (veg)",
           "desc": "Fredagens vegetariska",
           "tags": ["Vegetariskt"]
         }
