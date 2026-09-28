@@ -50,13 +50,6 @@ function renderMenu(groups) {
       name.textContent = d.name;
       nameRow.appendChild(name);
 
-      for (const t of d.tags || []) {
-        const tag = document.createElement("span");
-        tag.className = "tag tag-outline";
-        tag.textContent = t;
-        nameRow.appendChild(tag);
-      }
-
       const desc = document.createElement("span");
       desc.className = "dish-desc";
       desc.textContent = d.desc || "";
