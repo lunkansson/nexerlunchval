@@ -55,7 +55,7 @@ export function weekLabel(now = new Date()) {
 export function deadlineLabel(now = new Date()) {
   const d = deadlineFor(now);
   const pad = (n) => String(n).padStart(2, "0");
-  return "torsdag " + pad(d.getDate()) + "/" + pad(d.getMonth() + 1) + " kl " + pad(d.getHours()) + ":" + pad(d.getMinutes());
+  return "Torsdag " + pad(d.getDate()) + "/" + pad(d.getMonth() + 1) + " kl " + pad(d.getHours()) + ":" + pad(d.getMinutes());
 }
 
 /* — data — */

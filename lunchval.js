@@ -111,8 +111,8 @@ function setNotice(message) {
 }
 
 function applyLockState(locked, deadlineLabel) {
-  el.deadlineLabel.textContent = deadlineLabel || "torsdag kl 13:00";
-  el.lockedDeadline.textContent = deadlineLabel || "torsdag kl 13:00";
+  el.deadlineLabel.textContent = deadlineLabel || "Torsdag kl 13:00";
+  el.lockedDeadline.textContent = deadlineLabel || "Torsdag kl 13:00";
   el.lockedBanner.hidden = !locked;
   el.submit.disabled = locked;
   el.submit.textContent = locked ? "Anmälan stängd" : "Skicka mitt val";

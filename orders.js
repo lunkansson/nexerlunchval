@@ -141,7 +141,7 @@ function render() {
   el.countLabel.textContent = orders.length === 1 ? "1 portion" : orders.length + " portioner";
   el.statusLabel.textContent = state.locked
     ? "anmälan stängd"
-    : "öppen till " + (state.deadlineLabel || "torsdag kl 13:00");
+    : "öppen till " + (state.deadlineLabel || "Torsdag kl 13:00");
 
   el.ordersSection.hidden = orders.length === 0;
   el.emptyCard.hidden = orders.length > 0;
