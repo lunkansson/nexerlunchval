@@ -27,21 +27,6 @@
           "tags": ["Vegetariskt"]
         }
       ]
-    },
-    {
-      "title": "Salad",
-      "items": [
-        {
-          "name": "Caesarsallad med kyckling & bacon",
-          "desc": "Grana padano · Tomater · Rödlök · Krutonger · Caesardressing",
-          "tags": ["Kött"]
-        },
-        {
-          "name": "Caesarsallad med räkor",
-          "desc": "Grana padano · Tomater · Rödlök · Krutonger · Caesardressing",
-          "tags": ["Skaldjur"]
-        }
-      ]
     }
   ]
 }
