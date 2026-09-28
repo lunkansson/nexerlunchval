@@ -114,7 +114,6 @@ function applyLockState(locked, deadlineLabel) {
   el.deadlineLabel.textContent = deadlineLabel || "Torsdag kl 13:00";
   el.lockedDeadline.textContent = deadlineLabel || "Torsdag kl 13:00";
   el.lockedBanner.hidden = !locked;
-  el.submit.disabled = locked;
   el.submit.textContent = locked ? "Anmälan stängd" : "Skicka mitt val";
 }
 
@@ -146,7 +145,10 @@ function refreshHeader() {
 
 el.form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  if (store.isLocked()) return;
+  if (store.isLocked()) {
+    window.alert("Du är sent ute – anmälan stängde " + store.deadlineLabel() + ". Synka med Åsa, kanske går det att lösa ändå!");
+    return;
+  }
 
   const name = el.nameInput.value.trim();
   const dish = el.form.querySelector('input[name="dish"]:checked')?.value;
