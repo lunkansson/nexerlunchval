@@ -118,11 +118,6 @@ function applyLockState(locked, deadlineLabel) {
   el.submit.textContent = locked ? "Anmälan stängd" : "Skicka mitt val";
 }
 
-function updateMeetingDate() {
-  const friday = store.targetFriday();
-  el.meetingDate.textContent = friday.getDate() + "/" + (friday.getMonth() + 1);
-}
-
 async function refreshOrders() {
   try {
     const orders = await store.list();
@@ -142,8 +137,11 @@ async function loadMenu() {
   }
 }
 
-function refreshLock() {
-  applyLockState(store.isLocked(), store.deadlineLabel());
+function refreshHeader() {
+  const now = new Date();
+  const friday = store.targetFriday(now);
+  el.meetingDate.textContent = friday.getDate() + "/" + (friday.getMonth() + 1);
+  applyLockState(store.isLocked(now), store.deadlineLabel(now));
 }
 
 el.form.addEventListener("submit", async (e) => {
@@ -170,12 +168,10 @@ el.form.addEventListener("submit", async (e) => {
   }
 });
 
-refreshLock();
-updateMeetingDate();
+refreshHeader();
 loadMenu();
 refreshOrders();
 setInterval(() => {
-  refreshLock();
-  updateMeetingDate();
+  refreshHeader();
   refreshOrders();
 }, 20000);
