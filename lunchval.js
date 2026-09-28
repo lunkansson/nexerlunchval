@@ -1,6 +1,7 @@
 import * as store from "./lunch-store.js";
 
 const el = {
+  meetingDate: document.getElementById("meeting-date"),
   deadlineLabel: document.getElementById("deadline-label"),
   lockedBanner: document.getElementById("locked-banner"),
   lockedDeadline: document.getElementById("locked-deadline"),
@@ -117,6 +118,11 @@ function applyLockState(locked, deadlineLabel) {
   el.submit.textContent = locked ? "Anmälan stängd" : "Skicka mitt val";
 }
 
+function updateMeetingDate() {
+  const friday = store.targetFriday();
+  el.meetingDate.textContent = friday.getDate() + "/" + (friday.getMonth() + 1);
+}
+
 async function refreshOrders() {
   try {
     const orders = await store.list();
@@ -165,9 +171,11 @@ el.form.addEventListener("submit", async (e) => {
 });
 
 refreshLock();
+updateMeetingDate();
 loadMenu();
 refreshOrders();
 setInterval(() => {
   refreshLock();
+  updateMeetingDate();
   refreshOrders();
 }, 20000);
