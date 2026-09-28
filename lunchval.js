@@ -1,7 +1,6 @@
 import * as store from "./lunch-store.js";
 
 const el = {
-  menuWeekLabel: document.getElementById("menu-week-label"),
   deadlineLabel: document.getElementById("deadline-label"),
   lockedBanner: document.getElementById("locked-banner"),
   lockedDeadline: document.getElementById("locked-deadline"),
@@ -132,7 +131,6 @@ async function loadMenu() {
   try {
     const m = await store.menu();
     renderMenu(m.groups || []);
-    el.menuWeekLabel.textContent = m.week ? "vecka " + m.week : "denna vecka";
   } catch (e) {
     setError("Kunde inte läsa menyn: " + e.message);
   }
