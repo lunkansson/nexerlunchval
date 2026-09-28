@@ -262,7 +262,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 
 .hero { display: flex; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
 .hero-copy { flex: 1 1 340px; }
-.eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); }
+.eyebrow { font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); }
 .hero h1 { font-size: 42px; margin: 6px 0 8px; }
 .lede { max-width: 52ch; margin: 0; color: color-mix(in srgb, var(--color-text) 60%, transparent); }
 .hero-cards { display: flex; gap: 10px; flex-wrap: wrap; }
