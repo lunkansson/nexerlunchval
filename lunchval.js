@@ -23,10 +23,6 @@ function renderMenu(groups) {
     const groupEl = document.createElement("div");
     groupEl.className = "menu-group";
 
-    const title = document.createElement("h6");
-    title.textContent = g.title;
-    groupEl.appendChild(title);
-
     for (const d of g.items || []) {
       const label = document.createElement("label");
       label.className = "radio dish";
