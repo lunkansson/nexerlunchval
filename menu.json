@@ -1,20 +1,20 @@
 {
-  "week": 38,
-  "updated": "2026-09-18",
+  "week": 40,
+  "updated": "2026-09-28",
   "source": "manuell",
   "groups": [
     {
       "title": "Fredagens rätter",
       "items": [
         {
-          "name": "Högrevsbiff",
-          "desc": "Bearnaisesås · Tomat & löksallad · Rödvinssky · Klyftpotatis · Persilja",
+          "name": "Nötfärsbiff",
+          "desc": "Chimichurri · Majskräm · Klyftpotatis · Haricots verts",
           "tags": ["Kött"]
         },
         {
-          "name": "Pankostek fångst",
-          "desc": "Remouladsås · Fänkålscrudité · Citron · Rostad potatis",
-          "tags": ["Fisk"]
+          "name": "Fisksoppa",
+          "desc": "Vitlöksbröd · Musslor · Rotfrukter · Färskpotatis",
+          "tags": ["Fisk", "Skaldjur"]
         }
       ]
     },
