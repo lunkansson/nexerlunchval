@@ -42,6 +42,19 @@ async function removeOrder(o) {
   }
 }
 
+async function togglePickedUp(o, nameSpan, checkbox) {
+  const next = checkbox.checked;
+  nameSpan.classList.toggle("picked-up", next);
+  try {
+    await store.setPickedUp(o.id, next);
+    o.picked_up = next;
+  } catch (e) {
+    checkbox.checked = !next;
+    nameSpan.classList.toggle("picked-up", !next);
+    setError(e.message);
+  }
+}
+
 async function clearAll() {
   if (!window.confirm("Rensa hela listan – " + state.orders.length + " beställningar tas bort. Är du säker?")) return;
   try {
@@ -84,7 +97,27 @@ function renderTable() {
 
     const nameTd = document.createElement("td");
     nameTd.style.fontWeight = "500";
-    nameTd.textContent = o.name;
+
+    const nameLabel = document.createElement("label");
+    nameLabel.style.display = "inline-flex";
+    nameLabel.style.alignItems = "center";
+    nameLabel.style.gap = "9px";
+    nameLabel.style.cursor = "pointer";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.style.accentColor = "var(--color-accent)";
+    checkbox.checked = !!o.picked_up;
+
+    const nameSpan = document.createElement("span");
+    nameSpan.textContent = o.name;
+    if (o.picked_up) nameSpan.classList.add("picked-up");
+
+    checkbox.addEventListener("change", () => togglePickedUp(o, nameSpan, checkbox));
+
+    nameLabel.appendChild(checkbox);
+    nameLabel.appendChild(nameSpan);
+    nameTd.appendChild(nameLabel);
 
     const dishTd = document.createElement("td");
     dishTd.textContent = o.dish;

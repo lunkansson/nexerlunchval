@@ -50,14 +50,16 @@ create table lunch_orders (
   week        int  not null,
   name        text not null,
   dish        text not null,
-  allergies   text default ''
+  allergies   text default '',
+  picked_up   boolean not null default false
 );
 
 alter table lunch_orders enable row level security;
 
--- alla i nätverket får läsa och lägga till, men bara innan stopptiden
+-- alla i nätverket får läsa, lägga till och bocka av "hämtad", men bara innan stopptiden
 create policy "läs" on lunch_orders for select using (true);
 create policy "lägg till" on lunch_orders for insert with check (true);
+create policy "uppdatera" on lunch_orders for update using (true) with check (true);
 create policy "ta bort" on lunch_orders for delete using (true);
 
 -- vill du låsa borttagning till en admin: byt sista policyn mot
@@ -74,6 +76,17 @@ create table lunch_menu (
 alter table lunch_menu enable row level security;
 create policy "läs meny" on lunch_menu for select using (true);
 -- skrivning sker från edge-funktionen med service_role-nyckeln (går förbi RLS)
+```
+
+**Redan ett projekt igång sen tidigare?** `picked_up`-kolumnen (för avbockning på
+beställningssidan) och uppdateringspolicyn fanns inte i den första versionen av
+SQL:en ovan. Kör det här en gång i SQL-editorn för att lägga till dem utan att
+tappa befintliga rader:
+
+```sql
+alter table lunch_orders add column if not exists picked_up boolean not null default false;
+drop policy if exists "uppdatera" on lunch_orders;
+create policy "uppdatera" on lunch_orders for update using (true) with check (true);
 ```
 
 ### Stopptid

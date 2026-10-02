@@ -116,6 +116,22 @@ export async function remove(id) {
   if (!res.ok) throw new Error("Kunde inte ta bort raden (" + res.status + ")");
 }
 
+export async function setPickedUp(id, pickedUp) {
+  if (!configured()) {
+    const rows = localRead();
+    const row = rows.find(o => String(o.id) === String(id));
+    if (row) row.picked_up = pickedUp;
+    localWrite(rows);
+    return;
+  }
+  const res = await fetch(SUPABASE_URL + "/rest/v1/" + TABLE + "?id=eq." + encodeURIComponent(id), {
+    method: "PATCH",
+    headers: headers({ Prefer: "return=minimal" }),
+    body: JSON.stringify({ picked_up: pickedUp }),
+  });
+  if (!res.ok) throw new Error("Kunde inte uppdatera status (" + res.status + ")");
+}
+
 export async function clear(now = new Date()) {
   if (!configured()) {
     const week = isoWeek(targetFriday(now));
