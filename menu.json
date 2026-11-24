@@ -1,6 +1,6 @@
 {
-  "week": 40,
-  "updated": "2026-09-28",
+  "week": 48,
+  "updated": "2026-11-24",
   "source": "manuell",
   "groups": [
     {
@@ -8,13 +8,13 @@
       "items": [
         {
           "name": "Nötfärsbiff",
-          "desc": "Chimichurri · Majskräm · Klyftpotatis · Haricots verts",
+          "desc": "Café de parissås · Potatisgratäng · Bakad tomat",
           "tags": ["Kött"]
         },
         {
-          "name": "Fisksoppa",
-          "desc": "Vitlöksbröd · Musslor · Rotfrukter · Färskpotatis",
-          "tags": ["Fisk", "Skaldjur"]
+          "name": "Havets Wallenbergare",
+          "desc": "Brynt smör · Pepparrot · Ärtor · Potatispuré",
+          "tags": ["Fisk"]
         }
       ]
     },
